@@ -1,0 +1,30 @@
+{
+  "name": "wokmas",
+  "version": "0.0.1",
+  "description": "A Discord bot for the Worn off Keys 2020 coding challenge",
+  "main": "bot.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Townsy45/WOKmas.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "christmas",
+    "discord.js",
+    "discord",
+    "bot",
+    "xmas",
+    "challenge",
+    "collaberation"
+  ],
+  "author": "Townsy",
+  "license": "GPL-3.0-or-later",
+  "dependencies": {
+    "discord.js": "^12.5.1",
+    "fs": "0.0.1-security",
+    "mustang-log": "^1.1.2",
+    "pg": "^8.5.1"
+  }
+}

@@ -1,0 +1,9 @@
+# ENV stuff
+./source/.env
+
+# Node Modules#
+./source/node_modules
+
+# Bot Config
+./source/config/*.json
+./source/config/*.js
