@@ -12,6 +12,7 @@ module.exports.run = async (client, message, args) => {
   if (!args[0]) {
     reply.setDescription(`${member} the current prefix is \`${prefix}\``);
     return message.channel.send(reply);
+    console.log('THis is a test');
   }
   // Check member perms
   if (!member.hasPermission('ADMINISTRATOR')) return message.channel.send(':x: Insufficient permissions!').then(m => m.delete({ timeout: 5000 }));
