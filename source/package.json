@@ -27,6 +27,7 @@
     "dotenv": "^8.2.0",
     "fs": "0.0.1-security",
     "mustang-log": "^1.1.2",
+    "node-cron": "^2.0.3",
     "pg": "^8.5.1"
   }
 }
