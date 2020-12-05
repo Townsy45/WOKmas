@@ -1,12 +1,12 @@
 # ENV stuff
-source/.env
+./source/.env
 
 # Node Modules#
-source/node_modules
+./source/node_modules
 
 # Bot Config
-source/config/*.json
-source/config/*.js
+./source/config/*.json
+./source/config/*.js
 
 # Commands
-source/commands/Development
+./source/commands/Development
