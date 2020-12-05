@@ -82,6 +82,12 @@ const x = {
     return stats;
   },
 
+  async getPointsLeaderboard() {
+    // TODO - Add cache that updates every 1 minute or so possibly.
+    // Get leaderboard data from database
+    return await pg.query(`SELECT ROW_NUMBER () OVER (ORDER BY points DESC) as position, userid as id, points, correct, incorrect FROM wokmas.stats LIMIT 10;`);
+  },
+
   async getPointsPosition(user) {
     // Check user is sent
     if (!user) return;

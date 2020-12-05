@@ -18,4 +18,4 @@ A Discord bot for the Worn off Keys Discord Server challenge 2020.
    - [ ] Create a start command that grabs a question from the database
 - [ ] Add simple questions that drop randomly in chat
    - [ ] Questions when answer correctly award a smaller number of points then big trivia questions
-- [ ] Add leaderboards command
+- [x] Add leaderboards command
