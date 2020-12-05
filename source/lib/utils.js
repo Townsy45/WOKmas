@@ -5,7 +5,7 @@ const { join } = require('path');
 const pg = require('./pg');
 const log = require('./utils/log');
 
-// Normal Util functions
+/* Normal Util functions */
 const x = {
   async getGuildPrefix(client, guild) {
     // Check params
@@ -66,6 +66,41 @@ const x = {
     // Insert the guild into the config database
     await pg.query(`INSERT INTO wokmas.config (guild) VALUES ('${guild}')`);
     client.config.set(guild, true); // Add it to the cache
+  },
+
+  async getUserStats(user) {
+    // Check user is sent
+    if (!user) return;
+    // Check if user is in the database
+    let stats = await _getStats(user);
+    // User is not in database, create them
+    if (!stats) {
+      await pg.query(`INSERT INTO wokmas.stats (userid) VALUES ('${user}')`);
+      stats = await _getStats(user);
+    }
+    // Return the user stats
+    return stats;
+  },
+
+  async getPointsPosition(user) {
+    // Check user is sent
+    if (!user) return;
+    // Get the users position in the leaderboard
+    let data = await pg.query(`SELECT * FROM (SELECT userid, ROW_NUMBER () OVER (ORDER BY points DESC) as position FROM wokmas.stats) x WHERE userid = '${user}';`);
+    if (data && data.position) return data.position;
+  },
+
+  async sendError(message, error, embed = true) {
+    // Check message object is sent
+    if (!message) return;
+    // Default error message
+    if (!error) error = 'An unknown error occurred, please try again!';
+    // Send the message
+    if (embed) error = new Discord.MessageEmbed()
+      .setDescription(error)
+      .setColor(colour.error)
+      .setFooter(`If this re-occurs please report it to our discord: ${await this.getGuildPrefix(message.client, message.guild.id)}support`);
+    message.channel.send(error)
   }
 };
 
@@ -111,10 +146,12 @@ const core = {
     if (files) {
       for (const f of files) {
         let props = require(f);
-        bot.commands.set(props.help.name, props);
-        if (props.help.aliases && Array.isArray(props.help.aliases))
-          for (const alias of props.help.aliases)
-            bot.aliases.set(alias, props.help.name);
+        if (props.help) {
+          bot.commands.set(props.help.name, props);
+          if (props.help.aliases && Array.isArray(props.help.aliases))
+            for (const alias of props.help.aliases)
+              bot.aliases.set(alias, props.help.name);
+        }
       }
       await log.info(`Loaded ${files.length} commands!`)
     } else {
@@ -138,4 +175,19 @@ const core = {
 
 };
 
-module.exports = { x, core, log };
+/* Common colours used for embeds */
+const colour = {
+  red: '#ff5858',
+  error: '#b50d0d',
+  green: '#2cf32c',
+  success: '#00fc65',
+  yellow: '#ffd500',
+  hidden: '#36393F'
+}
+
+module.exports = { x, core, log, colour };
+
+
+async function _getStats(u) {
+  return await pg.query(`SELECT points, correct, incorrect FROM wokmas.stats WHERE userid = '${u}'`);
+}

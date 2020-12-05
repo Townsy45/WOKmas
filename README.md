@@ -12,8 +12,8 @@ A Discord bot for the Worn off Keys Discord Server challenge 2020.
 - [ ] Add Trivia Tables
    - [ ] Add questions table (question, answers, category, points, timesRan)
    - [ ] Add player stats table (user, points, correct, wrong)
-- [ ] Add stats command
-   - [ ] User runs `!stats @user` and this returns the users stats
+- [x] Add stats command
+   - [x] User runs `!stats @user` and this returns the users stats
 - [ ] Add Trivia module
    - [ ] Create a start command that grabs a question from the database
 - [ ] Add simple questions that drop randomly in chat

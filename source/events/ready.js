@@ -2,9 +2,9 @@ const utils = require('../lib/utils');
 const axios = require('axios');
 
 module.exports = async (bot) => {
-  
+
   let status;
-  
+  // TODO make this automatic with cron jobs or alternate
   try {
     const req = await axios.get('https://christmas-days.anvil.app/_/api/get_days');
     status = (req.data) ? req.data['Days to Christmas'] + ` days till Christmas!` : 'Merry WOKmas!';
