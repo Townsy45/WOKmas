@@ -6,7 +6,7 @@ A Discord bot for the Worn off Keys Discord Server challenge 2020.
 * [discord.wokmas.cloud](https://discord.wokmas.cloud/) (Discord Invite)
 
 ## TO-DO
-- [ ] Status Command
+- [x] Status Command
    - [ ] Show uptime
    - [ ] Show number of commands and events
 - [x] Add Trivia Tables
