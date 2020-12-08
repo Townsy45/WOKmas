@@ -7,8 +7,8 @@ A Discord bot for the Worn off Keys Discord Server challenge 2020.
 
 ## TO-DO
 - [x] Status Command
-   - [ ] Show uptime
-   - [ ] Show number of commands and events
+   - [x] Show uptime
+   - [x] Show number of commands and events
 - [x] Add Trivia Tables
    - [x] Add questions table (question, answers, category, points, timesRan)
    - [x] Add player stats table (user, points, correct, wrong)
