@@ -9,9 +9,9 @@ A Discord bot for the Worn off Keys Discord Server challenge 2020.
 - [ ] Status Command
    - [ ] Show uptime
    - [ ] Show number of commands and events
-- [ ] Add Trivia Tables
-   - [ ] Add questions table (question, answers, category, points, timesRan)
-   - [ ] Add player stats table (user, points, correct, wrong)
+- [x] Add Trivia Tables
+   - [x] Add questions table (question, answers, category, points, timesRan)
+   - [x] Add player stats table (user, points, correct, wrong)
 - [x] Add stats command
    - [x] User runs `!stats @user` and this returns the users stats
 - [ ] Add Trivia module
