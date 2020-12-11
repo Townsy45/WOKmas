@@ -19,5 +19,5 @@ A Discord bot for the Worn off Keys Discord Server challenge 2020.
 - [ ] Add simple questions that drop randomly in chat
    - [ ] Questions when answer correctly award a smaller number of points then big trivia questions
 - [x] Add leaderboards command
-- [ ] Help Command 
-   - [ ] With modules, sort by command folder name or category in command help
+- [x] Help Command 
+   - [x] With modules, sort by command folder name or category in command help
