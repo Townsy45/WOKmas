@@ -1,5 +1,5 @@
 # WOKmas
-A Discord bot for the Worn off Keys Discord Server challenge 2020.
+**A Discord bot for the Worn off Keys Discord Server challenge 2020.**
 
 ### Website Links
 * [www.wokmas.cloud](https://www.wokmas.cloud/) (Bot Invite)
